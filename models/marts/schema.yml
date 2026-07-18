@@ -1,0 +1,48 @@
+version: 2
+
+models:
+  - name: mart_revenue
+    description: "Выручка по месяцам"
+    columns:
+      - name: month
+        tests:
+          - not_null
+          - unique
+      - name: total_orders
+        tests:
+          - not_null
+      - name: total_revenue
+        tests:
+          - not_null
+      - name: avg_order_value
+        tests:
+          - not_null
+
+  - name: mart_top_categories
+    description: "Топ категорий по выручке"
+    columns:
+      - name: category
+        tests:
+          - not_null
+      - name: total_orders
+        tests:
+          - not_null
+      - name: total_revenue
+        tests:
+          - not_null
+
+  - name: mart_geography
+    description: "География заказов"
+    columns:
+      - name: state
+        tests:
+          - not_null
+      - name: city
+        tests:
+          - not_null
+      - name: total_orders
+        tests:
+          - not_null
+      - name: total_revenue
+        tests:
+          - not_null
