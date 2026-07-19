@@ -1,0 +1,8 @@
+FROM apache/airflow:latest
+
+COPY airflow-course/dags/library.txt .
+COPY airflow-course/dags/main_extract.py .
+
+RUN pip install -r library.txt
+
+CMD ["python", "main_extract.py"]
